@@ -1,0 +1,30 @@
+<div ngController="MyCtrl1">
+
+<center>
+
+<div class="jumbotron">
+		<h1>The Magazine Covers</h1>
+		<p class="lead">Enjoy <a href="http://www.the-magazine.org">The Magazine</a> covers in high resolution. Tap a cover to see what articles are inside.</p>
+	</div> <!-- .jumbotron -->
+
+<div id="myCarousel" class="carousel slide">
+	<!-- Carousel items -->
+	<div class="carousel-inner" ng-repeat="cover in number_of_issues_array">
+	{{$index + 1}}
+			<div class="item">
+				<a href="http://the-magazine.org/{{$index+1}}"><img src="http://the-magazine.org/itunes_cover_art/{{$index+1}}/source.png"></a>
+			</div> <!-- .item -->
+	</div>
+	<!-- Carousel nav -->
+	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div> <!-- #myCarousel -->
+
+<div id="footer">
+	<a href="http://www.the-magazine-covers.org">The Magazine Covers</a> is not affiliated with or endorsed by <a href="http://www.the-magazine.org">The Magazine</a> in any way.
+	<div>Follow on <a href="https://twitter.com/TheMagCovers">Twitter</a>.</div>
+</div> <!-- #footer -->
+
+</center>
+
+</div> <!-- MyCtrl1 -->
