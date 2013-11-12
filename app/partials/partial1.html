@@ -7,17 +7,15 @@
 		<p class="lead">Enjoy <a href="http://www.the-magazine.org">The Magazine</a> covers in high resolution. Tap a cover to see what articles are inside.</p>
 	</div> <!-- .jumbotron -->
 
-<div id="myCarousel" class="carousel slide">
-	<!-- Carousel items -->
-	<div class="carousel-inner">
-			<div class="item" ng-repeat="cover in number_of_issues_array | orderBy:'-id'">
-				<a href="http://the-magazine.org/{{cover.id}}"><img src="http://the-magazine.org/itunes_cover_art/{{cover.id}}/source.png"></a>
-			</div> <!-- .item -->
-	</div>
-	<!-- Carousel nav -->
-	<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-	<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div> <!-- #myCarousel -->
+<carousel interval="myInterval">
+  <slide ng-repeat="slide in slides" active="slide.active">
+    <img ng-src="{{slide.image}}" style="margin:auto;">
+    <div class="carousel-caption">
+      <h4>Slide {{$index}}</h4>
+      <p>{{slide.text}}</p>
+    </div>
+  </slide>
+</carousel>
 
 <div id="footer">
 	<a href="http://www.the-magazine-covers.org">The Magazine Covers</a> is not affiliated with or endorsed by <a href="http://www.the-magazine.org">The Magazine</a> in any way.

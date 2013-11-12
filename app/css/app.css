@@ -5,6 +5,10 @@ body {
 	font-family: 'Georgia', serif;
 }
 
+.carousel-indicators{
+	display: none;
+}
+
 @media all and (max-width: 320px) and (min-width: 0px) {
 	h1 {
 		font-size: 23px;
