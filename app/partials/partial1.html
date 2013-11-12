@@ -9,10 +9,9 @@
 
 <div id="myCarousel" class="carousel slide">
 	<!-- Carousel items -->
-	<div class="carousel-inner" ng-repeat="cover in number_of_issues_array">
-	{{$index + 1}}
-			<div class="item">
-				<a href="http://the-magazine.org/{{$index+1}}"><img src="http://the-magazine.org/itunes_cover_art/{{$index+1}}/source.png"></a>
+	<div class="carousel-inner">
+			<div class="item" ng-repeat="cover in number_of_issues_array | orderBy:'-id'">
+				<a href="http://the-magazine.org/{{cover.id}}"><img src="http://the-magazine.org/itunes_cover_art/{{cover.id}}/source.png"></a>
 			</div> <!-- .item -->
 	</div>
 	<!-- Carousel nav -->

@@ -21,9 +21,10 @@ angular.module('myApp.controllers', [])
 			
 			$scope.number_of_issues_array = [];
 			for (var i = 0; i < $scope.current_issue_number; i++) {
-				$scope.number_of_issues_array.push(i);
+				$scope.number_of_issues_array.push( { "id" : i+1 });
 			}
 			
+			console.log($scope.number_of_issues_array);
 			console.log($scope.number_of_issues_array.length);
 
 			
