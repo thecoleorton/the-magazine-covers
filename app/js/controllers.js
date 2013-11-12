@@ -11,10 +11,7 @@ angular.module('myApp.controllers', [])
 	    // when the response is available
 	
 	    console.log("success() callback");
-	    console.log(data);
-	    console.log(status);
-	    console.log(headers);
-	    console.log(config);
+			logHttpData(data, status, headers, config);
 	    
 			$scope.current_issue_number = data[0].issue;
 			console.log($scope.current_issue_number);
@@ -34,10 +31,7 @@ angular.module('myApp.controllers', [])
 	    // or server returns response with an error status.
 	    
 	    console.log("error() callback");
-	    console.log(data);
-	    console.log(status);
-	    console.log(headers);
-	    console.log(config);
+			logHttpData(data, status, headers, config);
 	
 	  });
 	  
@@ -57,3 +51,15 @@ angular.module('myApp.controllers', [])
 
 
   }]);
+  
+  
+  
+function logHttpData (data, status, headers, config) {
+/*
+  	console.log("logHttpData()");
+  	console.log(data);
+  	console.log(status);
+  	console.log(headers());
+  	console.log(config);
+*/
+}
