@@ -13,18 +13,24 @@ angular.module('myApp.controllers', [])
 	    console.log("success() callback");
 			logHttpData(data, status, headers, config);
 	    
-			$scope.current_issue_number = data[0].issue;
+			var currentIssueNumber = $scope.current_issue_number = data[0].issue;
 			console.log($scope.current_issue_number);
-			
-			$scope.number_of_issues_array = [];
-			for (var i = 0; i < $scope.current_issue_number; i++) {
-				$scope.number_of_issues_array.push( { "id" : i+1 });
-			}
-			
-			console.log($scope.number_of_issues_array);
-			console.log($scope.number_of_issues_array.length);
 
-			
+			/* CAROUSEL */
+			$scope.myInterval = -1;
+			var slides = $scope.slides = [];
+			$scope.addSlide = function() {
+				slides.push({
+				  cover_id: slides.length + 1
+				});
+			};
+			for (var i = 0; i < currentIssueNumber; i++) {
+				$scope.addSlide();
+			}
+			// reverse the order of slides[] so the latest cover is shown first
+			slides.reverse();
+			console.log(slides);
+
 	  })
 	  .error(function(data, status, headers, config) {
 	    // called asynchronously if an error occurs
@@ -34,22 +40,6 @@ angular.module('myApp.controllers', [])
 			logHttpData(data, status, headers, config);
 	
 	  });
-	  
-			$scope.myInterval = -1;
-			var slides = $scope.slides = [];
-			$scope.addSlide = function() {
-			var newWidth = 200 + ((slides.length + (25 * slides.length)) % 150);
-			slides.push({
-			  image: 'http://placekitten.com/' + newWidth + '/200',
-			  text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-			    ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-			});
-			};
-			for (var i=0; i<4; i++) {
-				$scope.addSlide();
-			}
-
-
   }]);
   
   

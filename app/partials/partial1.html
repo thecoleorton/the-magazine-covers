@@ -8,12 +8,8 @@
 	</div> <!-- .jumbotron -->
 
 <carousel interval="myInterval">
-  <slide ng-repeat="slide in slides" active="slide.active">
-    <img ng-src="{{slide.image}}" style="margin:auto;">
-    <div class="carousel-caption">
-      <h4>Slide {{$index}}</h4>
-      <p>{{slide.text}}</p>
-    </div>
+  <slide ng-repeat="slide in slides" active="slide.active">    
+    <a href="http://the-magazine.org/{{slide.cover_id}}"><img src="http://the-magazine.org/itunes_cover_art/{{slide.cover_id}}/source.png" style="max-width:768px"></a>
   </slide>
 </carousel>
 
