@@ -1,7 +1,7 @@
 'use strict';
 
-var BASE_URL = "http://localhost:3000/" // dev
-/* var BASE_URL = "http://the-magazine-covers.org:3000/" // prod */
+/* var BASE_URL = "http://localhost:3000/" // dev */
+var BASE_URL = "http://the-magazine-covers.org:8080/" // prod
 
 var CURRENT_ISSUE_NUMBER_PATH = "api/current_issue_number"
 
