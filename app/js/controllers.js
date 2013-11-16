@@ -13,7 +13,7 @@ angular.module('myApp.controllers', [])
 	    console.log("success() callback");
 			logHttpData(data, status, headers, config);
 	    
-			var currentIssueNumber = $scope.current_issue_number = data[0].issue;
+			var currentIssueNumber = $scope.current_issue_number = data.results[0].current_number;
 			console.log($scope.current_issue_number);
 
 			/* CAROUSEL */
