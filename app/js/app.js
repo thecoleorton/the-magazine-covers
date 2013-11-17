@@ -15,9 +15,9 @@ angular.module('myApp', [
 .config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.otherwise({redirectTo: '/'});
-  
-  $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'hKvmhFzQEwFjRUFC4HlIsKpjKBEmrjZx9Z06AuNV';
-  $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'yV9vIFSU47wMXnV3t8fTMTiPMQKH4hhtV3YTdt7R';
+
+  $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = parseApplicationKey;
+  $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = parseRESTAPIKey;
   $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
 
 }]);
