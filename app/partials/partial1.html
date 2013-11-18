@@ -1,0 +1,23 @@
+<div ngController="MyCtrl1">
+
+<center>
+
+<div class="jumbotron">
+		<h1>The Magazine Covers</h1>
+		<p class="lead">Enjoy <a href="http://www.the-magazine.org">The Magazine</a> covers in high resolution. Tap a cover to see what articles are inside.</p>
+	</div> <!-- .jumbotron -->
+
+<carousel interval="myInterval">
+  <slide ng-repeat="slide in slides" active="slide.active">    
+    <a href="http://the-magazine.org/{{slide.cover_id}}"><img src="http://the-magazine.org/itunes_cover_art/{{slide.cover_id}}/source.png"></a>
+  </slide>
+</carousel>
+
+<div id="footer">
+	<a href="http://www.the-magazine-covers.org">The Magazine Covers</a> is not affiliated with or endorsed by <a href="http://www.the-magazine.org">The Magazine</a> in any way.
+	<div>Follow on <a href="https://twitter.com/TheMagCovers">Twitter</a>.</div>
+</div> <!-- #footer -->
+
+</center>
+
+</div> <!-- MyCtrl1 -->
